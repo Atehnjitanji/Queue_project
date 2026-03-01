@@ -13,8 +13,8 @@ class Queue:
             return None
         current_head = self.head
         self.head = self.head.next
-        self -= 1
-        return current_head
+        self.size -= 1
+        return current_head.data
 
     def add(self,item):
         new_node = Node(item)
@@ -56,3 +56,4 @@ if __name__ == '__main__':
     waitlist = Queue()
     waitlist.add("Amy")
     print(repr(waitlist))
+    print(waitlist.pop_left())
